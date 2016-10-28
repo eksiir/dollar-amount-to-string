@@ -4,7 +4,7 @@ import {Component} from "@angular/core";
   selector: 'convert-dollar-amount',
   template: `
     <label for="digitalAmt">Enter Dollar Number Amount: </label>
-    <input #digitalAmt (keyup.enter)="convertDigitalAmt(digitalAmt.value)">
+    <input #digitalAmt (keyup)="convertDigitalAmt(digitalAmt.value)">
     <br><br>
     <div *ngIf="invalidInput" style="color:red">{{invalidInput}}</div>
     <div *ngIf="!invalidInput && englishAmt && !digitalAmt.pristine">
