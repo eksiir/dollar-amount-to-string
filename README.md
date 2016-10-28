@@ -59,7 +59,7 @@ Use the `-prod` flag for a production build.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 The app will automatically reload if you change any of the source files.
 
-## TODO
-- Add unit tests
-- Add e2e tests
+## License
+The MIT License (MIT).
 
+See the LICENSE file in this project for more details.
