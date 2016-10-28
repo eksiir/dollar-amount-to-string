@@ -1,8 +1,8 @@
-# DollarAmountToString
+# Convert Numerical Dollar Amount to English Words
 
-Convert a positive integer number to its English text equivalent. 
+Convert a positive integer number to its equivalent English words. 
 
-The output should be unspaced and CamelCased. Assume that the numbers are < 1000000000 (1 billion). 
+The output is unspaced and CamelCased. Assume that the numbers are < 1000000000 (1 billion). 
 In case of ambiguities e.g. 2200 which can be 
 <strong>TwoThousandTwoHundredDollars</strong> or <strong>TwentyTwoHundredDollars</strong>, 
 always choose the representation with the larger base i.e. TwoThousandTwoHundredDollars 
@@ -55,8 +55,8 @@ Cloning this repository say in the <strong>dollar-amount-to-string</strong> dire
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. 
 Use the `-prod` flag for a production build.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+## Run
+Run `ng serve` for a development server. Navigate to `http://localhost:4200/`. 
 The app will automatically reload if you change any of the source files.
 
 ## License
