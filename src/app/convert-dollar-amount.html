@@ -1,0 +1,9 @@
+<label for="digitalAmt">Enter Numerical Dollar Amount: $</label>
+<input #digitalAmt (keyup)="convertDigitalAmt(digitalAmt.value)" autofocus>
+<br><br>
+<div [ngStyle] = "outputStyle()">
+  <div *ngIf="invalidInput">{{invalidInput}}</div>
+  <div *ngIf="!invalidInput && englishAmt && !digitalAmt.pristine">
+    <span>{{englishAmt}}</span>
+  </div>
+</div>

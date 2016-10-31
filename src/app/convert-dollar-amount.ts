@@ -2,15 +2,7 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'convert-dollar-amount',
-  template: `
-    <label for="digitalAmt">Enter Numerical Dollar Amount: $</label>
-    <input #digitalAmt (keyup)="convertDigitalAmt(digitalAmt.value)">
-    <br><br>
-    <div *ngIf="invalidInput" style="color:red">{{invalidInput}}</div>
-    <div *ngIf="!invalidInput && englishAmt && !digitalAmt.pristine">
-      <span><strong>{{englishAmt}}</strong></span>
-    </div>
-  `
+  templateUrl: 'convert-dollar-amount.html'
 })
 export class ConvertDollarAmount {
   invalidInput = '';
@@ -19,6 +11,9 @@ export class ConvertDollarAmount {
   private englishSingleDigit = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
   private englishLess20 = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
   private englishLess100 = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+  private colors = ['red', 'blue', 'brown', 'magenta', 'orange', 'cyan', 'coral', 'black', 'greenyellow'];
+  private fontSizes = ['24px', '14px', '18px', '20px', '24px', '32px', '36px', '40px', '42px'];
+  private fontWeights = ['normal', 'normal', 'italic', 'bold'];
 
   convertDigitalAmt(digitalAmt: string) : void {
     this.invalidInput = '';
@@ -79,5 +74,16 @@ export class ConvertDollarAmount {
 
     this.invalidInput = 'Invalid dollar amount: More than max $1B';
     return '';
+  }
+
+  private outputStyle() {
+    let length = (this.englishAmt) ? this.englishAmt.length : 0;
+    // index to the arrays will end up being 0 for invalid input error message
+
+    return {
+      'color': this.colors[length % this.colors.length],
+      'font-size': this.fontSizes[length % this.fontSizes.length],
+      'font-weight': this.fontWeights[length % this.fontWeights.length]
+    };
   }
 }
