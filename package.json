@@ -9,7 +9,9 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "deploy2heroku": "npm install -g http-server; ng build --prod; http-server dist/"
+    "preinstall": "npm install -g http-server",
+    "postinstall": "ng build",
+    "deploy2heroku": "http-server dist/"
   },
   "private": true,
   "dependencies": {
