@@ -1,4 +1,4 @@
-import {TestBed, async, ComponentFixture} from '@angular/core/testing';
+import {TestBed, ComponentFixture} from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {ConvertDollarAmountComponent} from './cda-convert-dollar-amount';
 import {DebugElement} from '@angular/core';
@@ -26,21 +26,21 @@ describe(`App: DollarAmountToString`, () => {
     compiledAppComp = debugElement.nativeElement;
   });
 
-  it(`should create the app component`, async(() => {
+  it(`should create the app component`, () => {
     expect(appComp).toBeTruthy();
-  }));
+  });
 
-  it(`should create app native element`, async(() => {
+  it(`should create app native element`, () => {
     expect(compiledAppComp).toBeTruthy();
-  }));
+  });
 
-  it(`should render the main header in an h1 element`, async(() => {
+  it(`should render the main header in an h1 element`, () => {
     fixture.detectChanges();
     expect(compiledAppComp.querySelector('h1').textContent).toContain(h1TextContent);
-  }));
+  });
 
-  it(`should create the '${cdaSelectorName}' component`, async(() => {
+  it(`should create the '${cdaSelectorName}' component`, () => {
     fixture.detectChanges();
     expect(compiledAppComp.querySelector(cdaSelectorName)).toBeTruthy();
-  }));
+  });
 });
