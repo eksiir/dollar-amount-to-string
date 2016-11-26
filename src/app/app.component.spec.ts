@@ -1,33 +1,46 @@
-/* tslint:disable:no-unused-variable */
-
-import { TestBed, async } from '@angular/core/testing';
+import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {ConvertDollarAmountComponent} from './cda-convert-dollar-amount';
+import {DebugElement} from '@angular/core';
 
-describe('App: DollarAmountToString', () => {
+let fixture: ComponentFixture<AppComponent>,
+  debugElement: DebugElement,
+  appComp: AppComponent,
+  compiledAppComp: HTMLElement,
+  h1TextContent = 'Convert Numerical Dollar Amount to English Words',
+  cdaSelectorName = 'cda-convert-dollar-amount';
+
+describe(`App: DollarAmountToString`, () => {
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ConvertDollarAmountComponent
       ],
     });
+
+    fixture = TestBed.createComponent(AppComponent);
+    debugElement = fixture.debugElement;
+    appComp = debugElement.componentInstance;
+    compiledAppComp = debugElement.nativeElement;
   });
 
-  it('should create the app', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  it(`should create the app component`, async(() => {
+    expect(appComp).toBeTruthy();
   }));
 
-  it(`should have as title 'app works!'`, async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
+  it(`should create app native element`, async(() => {
+    expect(compiledAppComp).toBeTruthy();
   }));
 
-  it('should render title in a h1 tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
+  it(`should render the main header in an h1 element`, async(() => {
     fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    expect(compiledAppComp.querySelector('h1').textContent).toContain(h1TextContent);
+  }));
+
+  it(`should create the '${cdaSelectorName}' component`, async(() => {
+    fixture.detectChanges();
+    expect(compiledAppComp.querySelector(cdaSelectorName)).toBeTruthy();
   }));
 });

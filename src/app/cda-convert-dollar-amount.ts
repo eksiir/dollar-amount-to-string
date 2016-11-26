@@ -76,7 +76,7 @@ export class ConvertDollarAmountComponent {
     return '';
   }
 
-  public outputStyle() {
+  outputStyle() {
     let length = (this.englishAmt) ? this.englishAmt.length : 0;
     // index to the arrays will end up being 0 for invalid input error message
 
