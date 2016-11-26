@@ -6,6 +6,6 @@ export class DollarAmountToStringPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('cda-app-root h1')).getText();
   }
 }

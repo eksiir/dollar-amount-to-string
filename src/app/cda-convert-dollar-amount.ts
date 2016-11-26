@@ -1,10 +1,10 @@
-import {Component} from "@angular/core";
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'convert-dollar-amount',
-  templateUrl: 'convert-dollar-amount.html'
+  selector: 'cda-convert-dollar-amount',
+  templateUrl: 'cda-convert-dollar-amount.html'
 })
-export class ConvertDollarAmount {
+export class ConvertDollarAmountComponent {
   invalidInput = '';
   englishAmt = '';
 
@@ -15,7 +15,7 @@ export class ConvertDollarAmount {
   private fontSizes = ['24px', '14px', '18px', '20px', '24px', '32px', '36px', '40px', '42px'];
   private fontWeights = ['normal', 'normal', 'italic', 'bold'];
 
-  convertDigitalAmt(digitalAmt: string) : void {
+  convertDigitalAmt(digitalAmt: string): void {
     this.invalidInput = '';
     this.englishAmt = '';
 
@@ -47,7 +47,7 @@ export class ConvertDollarAmount {
     }
   }
 
-  private convert(intAmt: number) : string {
+  private convert(intAmt: number): string {
     if (intAmt < 10) {
       return this.englishSingleDigit[intAmt % 10];
     }
@@ -76,7 +76,7 @@ export class ConvertDollarAmount {
     return '';
   }
 
-  private outputStyle() {
+  public outputStyle() {
     let length = (this.englishAmt) ? this.englishAmt.length : 0;
     // index to the arrays will end up being 0 for invalid input error message
 
